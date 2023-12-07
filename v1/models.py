@@ -16,6 +16,17 @@ class Genre(models.Model):
         ordering = ["slug"]
 
 
+class Conflict(models.Model):
+    name = models.CharField(max_length=256)
+    slug = models.SlugField(unique=True, max_length=50)
+
+    def __str__(self):
+        return self.slug
+
+    class Meta:
+        ordering = ["slug"]
+
+
 
 class Post(models.Model):
     name = models.CharField(max_length=256)
