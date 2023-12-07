@@ -14,3 +14,9 @@ class Genre(models.Model):
 
     class Meta:
         ordering = ["slug"]
+
+
+
+class Post(models.Model):
+    name = models.CharField(max_length=256)
+    slug = models.SlugField(unique=True, max_length=50)
